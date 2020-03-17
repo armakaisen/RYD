@@ -1,0 +1,38 @@
+{
+  "name": "ryd",
+  "version": "1.0.0",
+  "description": "Consulta de Saldos de Clientes",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src"
+  },
+  "keywords": [],
+  "author": "Armando Martinez",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "connect-flash": "^0.1.1",
+    "ejs": "^2.7.1",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "express-mysql-session": "^2.1.0",
+    "express-session": "^1.17.0",
+    "express-validator": "^6.2.0",
+    "handlebars-helpers": "^0.10.0",
+    "handlebars-intl": "^1.1.2",
+    "morgan": "^1.9.1",
+    "mysql": "^2.17.1",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "path": "^0.12.7",
+    "timeago.js": "^4.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "wryd"
+  }
+}

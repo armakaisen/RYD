@@ -1,0 +1,27 @@
+<div class="container-p4">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card">
+                <div class="card-body">
+                    <form action="/edit/{{link.id}}" method="POST">
+                        <div class="form-group">
+                            <input type="text" value = "{{link.title}}" class="form-control" name="title" placeholder="Title">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" value = "{{link.url}}" class="form-control" name="url" placeholder="url">
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="text" value = "{{link.description}}" class="form-control" name="description" placeholder="Descripción">
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-success btn-block">
+                                Save
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

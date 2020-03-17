@@ -1,0 +1,33 @@
+<div class="container">
+    <table class="table table-striped"> 
+        <thead>
+            <th>URL</th>
+            <th>Descripción</th>
+            <th>Creado</th>
+            <th>Operación</th>
+        </thead>
+        <tbody>
+            {{#each links}}
+                <tr>
+                    <td>
+                        <a href="{{url}}" target="_blank">
+                            {{ title }}                
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <p class="m-2">{{ description }}</p>
+                    </td>
+                    <td>
+                        <p class="m-2">{{ timeago created_at }}</p>
+                    </td>
+
+                    <td>
+                        <a href="/delete/{{id}}" class="btn btn-danger">Delete</a>
+                        <a href="/edit/{{id}}" class="btn btn-secondary">Edit</a>
+                    </td>                       
+                </tr>
+           {{/each}}
+        </tbody>
+    </table>
+</div>

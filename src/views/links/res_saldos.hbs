@@ -1,0 +1,41 @@
+<div class="container">
+
+   <table class="table table-striped">     
+        <thead class="thead-dark">       
+            <th>cod.</th>
+            <th>Cliente</th>
+            <th>Saldo</th>
+        </thead>
+        <tbody>
+            {{var lntotalCli = 0}}
+            {{var lnIdCliente = 0}}
+             
+            {{#each links}}
+               
+                <tr>
+                     <p>{{sum}}</p>
+                    <td>
+                        <!--
+                        <a href="/detalle/{{id_cliente}}" target="_blank">
+                            {{ cod_cliente }}                
+                        </a> -->
+                        <p class="m-2">{{cod_cliente}}</p>
+                    </td>
+                    
+                    <td>
+                        <a href="/detalle/{{id_cliente}}" target="_blank">
+                            {{nombre}}
+                        </a>
+                        <!--<p class="m-2">{{ nombre }}</p> -->
+                    </td>
+                    <td>
+                        <span class="float-right">
+                        <p class="m-2" > {{ saldo }} </p>
+                        </span>
+                    </td>
+                     
+                </tr>
+           {{/each}}
+        </tbody>
+    </table>
+</div>

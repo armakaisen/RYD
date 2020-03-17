@@ -1,0 +1,56 @@
+<div class="container">
+    <table class="table table-striped"> 
+        <thead>
+            <th>Nombre</th>
+            <th>Login</th>
+            <th>Fecha alta</th>
+            <th>Ultimo ingreso</th>
+             <th>Operación</th>
+        </thead>
+        <tbody>
+            {{#each tblusuarios}}
+                <tr>
+                    <!--
+                    <td>
+                        <P class="m-2">
+                            {{ NOMBRE }}            
+                        </P>
+                                            
+                    </td>
+                    
+                    <td>
+                        <p class="m-2">{{ LOGIN }}</p>
+                    </td>
+
+                    <td>
+                        <p class="m-2">{{ timeago FECHA_ALTA }}</p>
+                    </td>
+
+                    <td>
+                        <p class="m-2">{{ ULTIMO_INGRESO }}</p>
+                    </td>
+                    -->
+                    <td>
+                            {{ NOMBRE }}                              
+                    </td>
+                    
+                    <td>
+                        {{ LOGIN }}
+                    </td>
+
+                    <td>
+                        {{ timeago FECHA_ALTA }}
+                    </td>
+
+                    <td>
+                        {{ timeago ULTIMO_INGRESO }}
+                    </td>                   
+                    <td>
+                        <a href="/dltusuario/{{ID_USUARIO}}" class="btn btn-danger">Delete</a>
+                        <a href="/edtusuario/{{ID_USUARIO}}" class="btn btn-secondary">Edit</a>
+                    </td>                       
+                </tr>
+           {{/each}}
+        </tbody>
+    </table>
+</div>
