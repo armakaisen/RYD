@@ -1,0 +1,61 @@
+<div class="container">
+ 
+   <!-- <table id="res_saldosid" class="table table-striped">  -->
+    <table id="res_saldosid" class="table table-striped">   
+        <thead class="thead-dark">       
+            <th>cod.</th>
+            <th>Cliente</th>
+            <th>Saldo</th>
+        </thead>
+        <tbody>
+             
+            {{#each links}}
+               <!--
+                <tr>
+                     <p>{{sum}}</p>
+                    <td>
+                        <p class="m-2">{{cod_cliente}}</p>
+                    </td>
+                    
+                    <td>
+                        <p class="m-2">
+                            <a href="/detalle/{{id_cliente}}" target="_blank">
+                                {{nombre}}
+                            </a>
+                        </p>
+                    </td>
+
+                    <td>
+                        <span class="float-right">
+                        <p class="m-2" > {{ saldo }} </p>
+                        </span>
+                    </td>
+                     
+                </tr> 
+                -->
+                 <tr>
+                     {{sum}}
+                    <td>
+                        {{cod_cliente}}
+                    </td>
+                    
+                    <td>
+                
+                            <a href="/detalle/{{id_cliente}}" target="_blank">
+                                {{nombre}}
+                            </a>
+           
+                    </td>
+
+                    <td>
+                        <span class="float-right">
+                         {{ saldo }}  
+                        </span>
+                    </td>
+                     
+                </tr>
+           {{/each}}
+        </tbody>
+    </table>
+     
+</div>

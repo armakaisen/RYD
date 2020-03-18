@@ -1,4 +1,5 @@
 const bcrypt = require('bcryptjs');
+const handlebars = require('handlebars');
 
 const helpers = {};
 
@@ -16,17 +17,6 @@ helpers.comparePassword = async (password, passwordguardado)=>{
     }
 }
 
-helpers.sum = function() {
-    var args = [].concat.apply([], saldo);
-    var len = args.length;
-    var sum = 0;
-  console.log('dentro de helpers');
-    while (len--) {
-      if (utils.isNumber(args[len])) {
-        sum += Number(args[len]);
-      }
-    }
-    return sum;
-  };
+
 
 module.exports = helpers;

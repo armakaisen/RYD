@@ -1,7 +1,9 @@
 const express = require('express');
 const ruta = express.Router();
+
 var Handlebars     = require('handlebars');
 var HandlebarsIntl = require('handlebars-intl');
+
 HandlebarsIntl.registerWith(Handlebars);
 const helpers = require('../lib/helpers');
 const db_pool = require('../database');
@@ -49,7 +51,8 @@ ruta.get('/',  (req, res)=>{
 ruta.get('/list', isLoggedIn, async (req, res)=>{
     //const lccod = '370';
     const links = await db_pool.query('SELECT * FROM vw_res_saldos');
-    res.render('links/res_saldos', {links});
+    //res.render('links/res_saldos', {links});
+    res.render('links/res_saldos_pag',{links});
     //console.log(links);
     //res.send('aqui saldrá');
 })
