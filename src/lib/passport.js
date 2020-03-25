@@ -9,15 +9,15 @@ passport.use('local.signin', new localStrategy({
     passReqToCallback: true
 }, async (req, username, password, done)=>{   
     //console.log(req.body);
-    const filas = await db_pool.query('SELECT * FROM usuarios WHERE LOGIN = ?', [username]);
+    const filas = await db_pool.query('SELECT * FROM usuarios WHERE login = ?', [username]);
    
     if(filas.length > 0){
         const user = filas[0];
-        //console.log(user.CLAVE);
-        const validpassword = await helpers.comparePassword(password, user.CLAVE);
+        //console.log(user.clave);
+        const validpassword = await helpers.comparePassword(password, user.clave);
        
         if(validpassword){
-            done(null, user, req.flash('success', 'bienvenido '+user.NOMBRE));
+            done(null, user, req.flash('success', 'bienvenido '+user.nombre));
         }else{
             done(null, false, req.flash('message', 'clave incorrecta'));
         }
@@ -64,11 +64,11 @@ passport.use('local.signup', new localStrategy({
 
 passport.serializeUser((user, done)=>{
     /*
-    console.log(user.ID_USUARIO);
-    console.log(user.LOGIN);
-    console.log(user.NOMBRE);
+    console.log(user.id_usuario);
+    console.log(user.login);
+    console.log(user.nombre);
     */
-    done(null, user.ID_USUARIO);
+    done(null, user.id_usuario);
 });
 
 passport.deserializeUser( async (id, done)=>{

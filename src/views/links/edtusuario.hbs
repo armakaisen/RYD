@@ -3,16 +3,16 @@
         <div class="col-md-4 mx-auto">
             <div class="card">
                 <div class="card-body">
-                    <form action="/edtusuario/{{usuario.ID_USUARIO}}" method="POST">
+                    <form action="/edtusuario/{{usuario.id_usuario}}" method="POST">
                         <div class="form-group">
-                            <input type="text" value = "{{usuario.NOMBRE}}" class="form-control" name="fullname" placeholder="Nombre">
+                            <input type="text" value = "{{usuario.nombre}}" class="form-control" name="fullname" placeholder="nombre">
                         </div>
                         <div class="form-group">
-                            <input type="text" value = "{{usuario.LOGIN}}" class="form-control" name="username" placeholder="login">
+                            <input type="text" value = "{{usuario.login}}" class="form-control" name="username" placeholder="login">
                         </div>
                         
                         <div class="form-group">
-                            <input type="password" value = "{{usuario.CLAVE}}" class="form-control" name="password" placeholder="Password">
+                            <input type="password" value = "{{usuario.clave}}" class="form-control" name="password" placeholder="Password">
                         </div>
                         <div class="form-group">
                             <button class="btn btn-success btn-block">

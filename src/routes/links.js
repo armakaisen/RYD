@@ -103,15 +103,15 @@ ruta.get('/lstusuarios', isLoggedIn, async (req, res)=>{
 })
 
 
-ruta.get('/edtusuario/:ID_USUARIO', isLoggedIn, async (req,res)=>{
-    const { ID_USUARIO } = req.params;
-    //onsole.log(ID_USUARIO);
-    const tblusuario = await db_pool.query('SELECT * FROM usuarios WHERE ID_USUARIO = ?', [ID_USUARIO]);
+ruta.get('/edtusuario/:id_usuario', isLoggedIn, async (req,res)=>{
+    const { id_usuario } = req.params;
+    //onsole.log(id_usuario);
+    const tblusuario = await db_pool.query('SELECT * FROM usuarios WHERE id_usuario = ?', [id_usuario]);
     //console.log(tblusuario[0]);
     res.render('links/edtusuario', {usuario: tblusuario[0]});
 })
 
-ruta.post('/edtusuario/:ID_USUARIO', async (req,res)=>{
+ruta.post('/edtusuario/:id_usuario', async (req,res)=>{
     const { id } = req.params;    
     const { fullname, username, password } = req.body;
     const updUsuario = {
@@ -121,12 +121,12 @@ ruta.post('/edtusuario/:ID_USUARIO', async (req,res)=>{
     };
     updUsuario.clave = await helpers.encryptPassword(password);
 
-    const link = await db_pool.query('UPDATE usuarios set ? WHERE ID_USUARIO = ?', [updUsuario, id]);
+    const link = await db_pool.query('UPDATE usuarios set ? WHERE id_usuario = ?', [updUsuario, id]);
     req.flash('success', 'Registro fue actualizado...');
     res.redirect('/lstusuarios');
 })
 
-ruta.get('/dltusuario/:ID_USUARIO', isLoggedIn, async (req, res)=>{
+ruta.get('/dltusuario/:id_usuario', isLoggedIn, async (req, res)=>{
     //console.log(req.params.id);
     //res.send('eliminado');
     const { id } = req.params;

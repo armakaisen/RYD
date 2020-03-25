@@ -1,8 +1,8 @@
 <div class="container">
     <table class="table table-striped"> 
         <thead>
-            <th>Nombre</th>
-            <th>Login</th>
+            <th>nombre</th>
+            <th>login</th>
             <th>Fecha alta</th>
             <th>Ultimo ingreso</th>
              <th>Operación</th>
@@ -13,13 +13,13 @@
                     <!--
                     <td>
                         <P class="m-2">
-                            {{ NOMBRE }}            
+                            {{ nombre }}            
                         </P>
                                             
                     </td>
                     
                     <td>
-                        <p class="m-2">{{ LOGIN }}</p>
+                        <p class="m-2">{{ login }}</p>
                     </td>
 
                     <td>
@@ -31,11 +31,11 @@
                     </td>
                     -->
                     <td>
-                            {{ NOMBRE }}                              
+                            {{ nombre }}                              
                     </td>
                     
                     <td>
-                        {{ LOGIN }}
+                        {{ login }}
                     </td>
 
                     <td>
@@ -46,8 +46,8 @@
                         {{ timeago ULTIMO_INGRESO }}
                     </td>                   
                     <td>
-                        <a href="/dltusuario/{{ID_USUARIO}}" class="btn btn-danger">Delete</a>
-                        <a href="/edtusuario/{{ID_USUARIO}}" class="btn btn-secondary">Edit</a>
+                        <a href="/dltusuario/{{id_usuario}}" class="btn btn-danger">Delete</a>
+                        <a href="/edtusuario/{{id_usuario}}" class="btn btn-secondary">Edit</a>
                     </td>                       
                 </tr>
            {{/each}}
