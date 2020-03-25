@@ -2,9 +2,10 @@ const express = require('express');
 const ruta = express.Router();
 
 var Handlebars     = require('handlebars');
+/*
 var HandlebarsIntl = require('handlebars-intl');
-
 HandlebarsIntl.registerWith(Handlebars);
+*/
 const helpers = require('../lib/helpers');
 const db_pool = require('../database');
 const {isLoggedIn, isNotLoggedIn} = require('../lib/autoriza');
@@ -75,7 +76,7 @@ ruta.get('/detalle/:id_cliente', isLoggedIn, async (req,res)=>{
     const { id_cliente } = req.params;
     
     const lnsaldo = await db_pool.query("SELECT if(id_moneda = 1, format(total,0), format(total,2)) as saldo FROM det_saldos WHERE id_cliente = ? and nombre = ''", [id_cliente]);
-    console.log(lnsaldo);
+  
     const links = await db_pool.query('SELECT * FROM vw_det_saldos WHERE id_cliente = ?', [id_cliente]);
    
     res.render('links/det_saldos', {links, lnsaldo});
