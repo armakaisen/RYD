@@ -9,6 +9,10 @@ const helpers = require('../lib/helpers');
 const db_pool = require('../database');
 const {isLoggedIn, isNotLoggedIn} = require('../lib/autoriza');
 
+Handlebars.registerHelper('vue-js', function(options) {
+    return options.fn();
+});
+
 
 ruta.get('/add', isLoggedIn, (req, res)=>{
     res.render('links/add');

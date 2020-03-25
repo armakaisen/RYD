@@ -1,5 +1,4 @@
 const bcrypt = require('bcryptjs');
-const handlebars = require('handlebars');
 
 const helpers = {};
 
