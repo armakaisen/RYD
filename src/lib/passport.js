@@ -10,7 +10,9 @@ passport.use('local.signin', new localStrategy({
 }, async (req, username, password, done)=>{   
     //console.log(req.body);
     const filas = await db_pool.query('SELECT * FROM usuarios WHERE login = ?', [username]);
-   
+    
+    //console.log(filas);
+
     if(filas.length > 0){
         const user = filas[0];
         //console.log(user.clave);
