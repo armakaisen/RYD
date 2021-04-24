@@ -106,9 +106,9 @@ ruta.get('/lstusuarios', isLoggedIn, async (req, res)=>{
 
 ruta.get('/edtusuario/:id_usuario', isLoggedIn, async (req,res)=>{
     const { id_usuario } = req.params;
-    //onsole.log(id_usuario);
+   /* console.log(id_usuario); */
     const tblusuario = await db_pool.query('SELECT * FROM usuarios WHERE id_usuario = ?', [id_usuario]);
-    //console.log(tblusuario[0]);
+    /* console.log(tblusuario[0]); */
     res.render('links/edtusuario', {usuario: tblusuario[0]});
 })
 
@@ -120,6 +120,8 @@ ruta.post('/edtusuario/:id_usuario', async (req,res)=>{
         clave: password,
         nombre: fullname
     };
+    /* console.log(updusuario); */
+    
     updUsuario.clave = await helpers.encryptPassword(password);
 
     const link = await db_pool.query('UPDATE usuarios set ? WHERE id_usuario = ?', [updUsuario, id]);
